@@ -1,0 +1,15 @@
+dbt_project:
+  target: dev
+  outputs:
+    dev:
+      type: redshift
+      host: "{{ env_var('DBT_HOST') }}"
+      user: "{{ env_var('DBT_USER') }}"
+      password: "{{ env_var('DBT_PASSWORD') }}"
+      port: "{{ env_var('DBT_PORT') | as_number }}"
+      dbname: "{{ env_var('DBT_DBNAME') }}"
+      schema: "{{ env_var('DBT_SCHEMA') }}"
+
+      threads: 4
+      keepalives_idle: 240
+      connect_timeout: 300

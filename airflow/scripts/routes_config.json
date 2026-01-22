@@ -1,0 +1,4 @@
+[
+    {"origin": "BKK", "destination": "NRT", "name": "Tokyo (Narita)"},
+    {"origin": "BKK", "destination": "LHR", "name": "London (Heathrow)"}
+]
