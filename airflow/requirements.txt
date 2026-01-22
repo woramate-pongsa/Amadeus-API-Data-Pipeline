@@ -1,0 +1,11 @@
+apache-airflow-providers-amazon
+apache-airflow-providers-common-sql
+pandas
+pyarrow
+fastparquet
+psycopg2-binary
+sqlalchemy-redshift
+requests
+python-dotenv
+dbt-redshift
+dbt-core

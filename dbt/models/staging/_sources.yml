@@ -1,0 +1,11 @@
+version: 2
+
+sources:
+  - name: raw_data
+    database: main_db
+    schema: raw_data
+    tables:
+      - name: flight_price
+      - name: aircraft_data
+      - name: airport_data
+      - name: airline_data

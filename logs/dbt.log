@@ -1,0 +1,125 @@
+[0m12:58:54.379560 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x74178c842150>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x74178ed305f0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x74178ed26420>]}
+
+
+============================== 12:58:54.424729 | ef46c401-8c53-4167-8464-01b18283547e ==============================
+[0m12:58:54.424729 [info ] [MainThread]: Running with dbt=1.11.2
+[0m12:58:54.425523 [debug] [MainThread]: running dbt with arguments {'target_path': 'None', 'version_check': 'True', 'use_colors': 'True', 'log_format': 'default', 'warn_error': 'None', 'introspect': 'True', 'use_experimental_parser': 'False', 'log_cache_events': 'False', 'static_parser': 'True', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'quiet': 'False', 'send_anonymous_usage_stats': 'True', 'debug': 'False', 'invocation_command': 'dbt init', 'indirect_selection': 'eager', 'profiles_dir': '/home/codespace/.dbt', 'printer_width': '80', 'log_path': 'logs', 'fail_fast': 'False', 'cache_selected_only': 'False', 'empty': 'None', 'partial_parse': 'True', 'write_json': 'True', 'no_print': 'None'}
+[0m12:58:54.480092 [info ] [MainThread]: Creating dbt configuration folder at /home/codespace/.dbt
+[0m12:59:22.601625 [debug] [MainThread]: Starter project path: /home/codespace/.cache/pypoetry/virtualenvs/spotify-api-data-pipeline-6z1tlfH0-py3.12/lib/python3.12/site-packages/dbt/include/starter_project
+[0m12:59:22.609348 [info ] [MainThread]: 
+Your new dbt project "dbt_" was created!
+
+For more information on how to configure the profiles.yml file,
+please consult the dbt documentation here:
+
+  https://docs.getdbt.com/docs/configure-your-profile
+
+One more thing:
+
+Need help? Don't hesitate to reach out to us via GitHub issues or on Slack:
+
+  https://community.getdbt.com/
+
+Happy modeling!
+
+[0m12:59:22.609938 [info ] [MainThread]: Setting up your profile.
+[0m12:59:27.150386 [debug] [MainThread]: Redshift adapter: Setting redshift_connector to ERROR
+[0m12:59:27.151084 [debug] [MainThread]: Redshift adapter: Setting redshift_connector.core to ERROR
+[0m12:59:47.404294 [error] [MainThread]: Encountered an error:
+
+[0m12:59:47.407242 [error] [MainThread]: Traceback (most recent call last):
+  File "/home/codespace/.cache/pypoetry/virtualenvs/spotify-api-data-pipeline-6z1tlfH0-py3.12/lib/python3.12/site-packages/dbt/cli/requires.py", line 182, in wrapper
+    result, success = func(*args, **kwargs)
+                      ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/codespace/.cache/pypoetry/virtualenvs/spotify-api-data-pipeline-6z1tlfH0-py3.12/lib/python3.12/site-packages/dbt/cli/requires.py", line 128, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/codespace/.cache/pypoetry/virtualenvs/spotify-api-data-pipeline-6z1tlfH0-py3.12/lib/python3.12/site-packages/dbt/cli/main.py", line 483, in init
+    results = task.run()
+              ^^^^^^^^^^
+  File "/home/codespace/.cache/pypoetry/virtualenvs/spotify-api-data-pipeline-6z1tlfH0-py3.12/lib/python3.12/site-packages/dbt/task/init.py", line 346, in run
+    self.setup_profile(profile_name)
+  File "/home/codespace/.cache/pypoetry/virtualenvs/spotify-api-data-pipeline-6z1tlfH0-py3.12/lib/python3.12/site-packages/dbt/task/init.py", line 262, in setup_profile
+    self.create_profile_from_target(adapter, profile_name=profile_name)
+  File "/home/codespace/.cache/pypoetry/virtualenvs/spotify-api-data-pipeline-6z1tlfH0-py3.12/lib/python3.12/site-packages/dbt/task/init.py", line 179, in create_profile_from_target
+    self.create_profile_from_profile_template(profile_template, profile_name)
+  File "/home/codespace/.cache/pypoetry/virtualenvs/spotify-api-data-pipeline-6z1tlfH0-py3.12/lib/python3.12/site-packages/dbt/task/init.py", line 163, in create_profile_from_profile_template
+    target = self.generate_target_from_input(prompts, initial_target)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/codespace/.cache/pypoetry/virtualenvs/spotify-api-data-pipeline-6z1tlfH0-py3.12/lib/python3.12/site-packages/dbt/task/init.py", line 113, in generate_target_from_input
+    numeric_choice = click.prompt(prompt_msg, type=click.INT)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/codespace/.cache/pypoetry/virtualenvs/spotify-api-data-pipeline-6z1tlfH0-py3.12/lib/python3.12/site-packages/click/termui.py", line 171, in prompt
+    value = prompt_func(prompt)
+            ^^^^^^^^^^^^^^^^^^^
+  File "/home/codespace/.cache/pypoetry/virtualenvs/spotify-api-data-pipeline-6z1tlfH0-py3.12/lib/python3.12/site-packages/click/termui.py", line 154, in prompt_func
+    raise Abort() from None
+click.exceptions.Abort
+
+[0m12:59:47.411464 [debug] [MainThread]: Resource report: {"command_name": "init", "command_success": false, "command_wall_clock_time": 53.113594, "process_in_blocks": "59424", "process_kernel_time": 0.563491, "process_mem_max_rss": "127260", "process_out_blocks": "38832", "process_user_time": 4.272395}
+[0m12:59:47.412258 [debug] [MainThread]: Command `dbt init` failed at 12:59:47.412138 after 53.11 seconds
+[0m12:59:47.412778 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x74178c8a6720>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x74178ba71f70>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x74178b75fe90>]}
+[0m12:59:47.413662 [debug] [MainThread]: Flushing usage events
+[0m12:59:48.502140 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m13:00:04.133592 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7712acc56180>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7712aa8e66c0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7712aa7bad80>]}
+
+
+============================== 13:00:04.137178 | c940d8e5-02a4-4bc4-9ef7-2a3086409e77 ==============================
+[0m13:00:04.137178 [info ] [MainThread]: Running with dbt=1.11.2
+[0m13:00:04.137938 [debug] [MainThread]: running dbt with arguments {'partial_parse': 'True', 'indirect_selection': 'eager', 'warn_error': 'None', 'log_cache_events': 'False', 'log_format': 'default', 'static_parser': 'True', 'invocation_command': 'dbt init', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'profiles_dir': '/home/codespace/.dbt', 'send_anonymous_usage_stats': 'True', 'no_print': 'None', 'use_experimental_parser': 'False', 'debug': 'False', 'target_path': 'None', 'printer_width': '80', 'introspect': 'True', 'log_path': 'logs', 'use_colors': 'True', 'fail_fast': 'False', 'write_json': 'True', 'empty': 'None', 'cache_selected_only': 'False', 'quiet': 'False', 'version_check': 'True'}
+[0m13:00:09.010654 [debug] [MainThread]: Starter project path: /home/codespace/.cache/pypoetry/virtualenvs/spotify-api-data-pipeline-6z1tlfH0-py3.12/lib/python3.12/site-packages/dbt/include/starter_project
+[0m13:00:09.016586 [info ] [MainThread]: 
+Your new dbt project "dbt_" was created!
+
+For more information on how to configure the profiles.yml file,
+please consult the dbt documentation here:
+
+  https://docs.getdbt.com/docs/configure-your-profile
+
+One more thing:
+
+Need help? Don't hesitate to reach out to us via GitHub issues or on Slack:
+
+  https://community.getdbt.com/
+
+Happy modeling!
+
+[0m13:00:09.017204 [info ] [MainThread]: Setting up your profile.
+[0m13:00:11.897388 [debug] [MainThread]: Redshift adapter: Setting redshift_connector to ERROR
+[0m13:00:11.900278 [debug] [MainThread]: Redshift adapter: Setting redshift_connector.core to ERROR
+[0m13:00:12.804928 [error] [MainThread]: Encountered an error:
+
+[0m13:00:12.808421 [error] [MainThread]: Traceback (most recent call last):
+  File "/home/codespace/.cache/pypoetry/virtualenvs/spotify-api-data-pipeline-6z1tlfH0-py3.12/lib/python3.12/site-packages/dbt/cli/requires.py", line 182, in wrapper
+    result, success = func(*args, **kwargs)
+                      ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/codespace/.cache/pypoetry/virtualenvs/spotify-api-data-pipeline-6z1tlfH0-py3.12/lib/python3.12/site-packages/dbt/cli/requires.py", line 128, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/codespace/.cache/pypoetry/virtualenvs/spotify-api-data-pipeline-6z1tlfH0-py3.12/lib/python3.12/site-packages/dbt/cli/main.py", line 483, in init
+    results = task.run()
+              ^^^^^^^^^^
+  File "/home/codespace/.cache/pypoetry/virtualenvs/spotify-api-data-pipeline-6z1tlfH0-py3.12/lib/python3.12/site-packages/dbt/task/init.py", line 346, in run
+    self.setup_profile(profile_name)
+  File "/home/codespace/.cache/pypoetry/virtualenvs/spotify-api-data-pipeline-6z1tlfH0-py3.12/lib/python3.12/site-packages/dbt/task/init.py", line 262, in setup_profile
+    self.create_profile_from_target(adapter, profile_name=profile_name)
+  File "/home/codespace/.cache/pypoetry/virtualenvs/spotify-api-data-pipeline-6z1tlfH0-py3.12/lib/python3.12/site-packages/dbt/task/init.py", line 179, in create_profile_from_target
+    self.create_profile_from_profile_template(profile_template, profile_name)
+  File "/home/codespace/.cache/pypoetry/virtualenvs/spotify-api-data-pipeline-6z1tlfH0-py3.12/lib/python3.12/site-packages/dbt/task/init.py", line 163, in create_profile_from_profile_template
+    target = self.generate_target_from_input(prompts, initial_target)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/codespace/.cache/pypoetry/virtualenvs/spotify-api-data-pipeline-6z1tlfH0-py3.12/lib/python3.12/site-packages/dbt/task/init.py", line 129, in generate_target_from_input
+    target[key] = click.prompt(
+                  ^^^^^^^^^^^^^
+  File "/home/codespace/.cache/pypoetry/virtualenvs/spotify-api-data-pipeline-6z1tlfH0-py3.12/lib/python3.12/site-packages/click/termui.py", line 171, in prompt
+    value = prompt_func(prompt)
+            ^^^^^^^^^^^^^^^^^^^
+  File "/home/codespace/.cache/pypoetry/virtualenvs/spotify-api-data-pipeline-6z1tlfH0-py3.12/lib/python3.12/site-packages/click/termui.py", line 154, in prompt_func
+    raise Abort() from None
+click.exceptions.Abort
+
+[0m13:00:12.810411 [debug] [MainThread]: Resource report: {"command_name": "init", "command_success": false, "command_wall_clock_time": 8.741485, "process_in_blocks": "24", "process_kernel_time": 0.360651, "process_mem_max_rss": "116200", "process_out_blocks": "72", "process_user_time": 2.49204}
+[0m13:00:12.811393 [debug] [MainThread]: Command `dbt init` failed at 13:00:12.811235 after 8.74 seconds
+[0m13:00:12.812316 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7712a9ee9730>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7712a8912c90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7712a8913230>]}
+[0m13:00:12.813251 [debug] [MainThread]: Flushing usage events
+[0m13:00:13.736500 [debug] [MainThread]: An error was encountered while trying to flush usage events
